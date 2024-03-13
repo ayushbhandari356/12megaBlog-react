@@ -1,3 +1,5 @@
+// this file can be used for future for project for authentication purposes
+
 import conf from "../conf/conf";
 import { Client, Account, ID } from "appwrite";
 
@@ -6,7 +8,8 @@ export class AuthService{
     client = new Client();
     // only giveing account ref
     account
-    // making constructor . This is used to give refrence If using firebase we can change this code only ie is constructor only
+    // making constructor . This is used to give refrence 
+    // If using firebase we can change this code only ie is constructor only and give all the value same email etc
     constructor(){
         this.client
             .setEndpoint(conf.appwriteEndpoint)
@@ -40,9 +43,17 @@ export class AuthService{
         try {
             return await this.account.get()
         } catch (error) {
-            throw error
+            console.log("Appwrite service::login?orNot::error",error)
         }
         return null;
+    }
+
+    async logout(){
+        try {
+            await this.account.deleteSessions( )        
+        } catch (error) {
+            console.log("Appwrite service::logout::error",error)
+        }
     }
 
 
