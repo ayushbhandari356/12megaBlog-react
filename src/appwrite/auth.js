@@ -20,7 +20,7 @@ export class AuthService{
         try {
             const userAccount=await this.account.create(ID.unique(),email,password,name);
             if (userAccount) {
-                // call another method
+                // call another method . DIrectly opening the window of login
                 return this.login({email,password})
             } else {
                 return userAccount
