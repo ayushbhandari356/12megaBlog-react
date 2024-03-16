@@ -7,7 +7,7 @@ const initialState={
 }
 
 const authSlice = createSlice({
-    name:auth,
+    name:'auth',
     initialState,
     // inisde reducers everyone has access to state and action and with the help of action we get payload and change the initialstate onwards
     reducers:{

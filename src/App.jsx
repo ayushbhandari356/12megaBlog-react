@@ -35,6 +35,7 @@ function App() {
           {/* <Outlet/> */}
         </main>
         <Footer/>
+        <h1>ayush bhandari</h1>
       </div>
     </div>
   ):null
